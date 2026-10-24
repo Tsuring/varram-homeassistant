@@ -1,0 +1,71 @@
+# VARRAM for Home Assistant
+
+![VARRAM integration icon](custom_components/varram/brand/icon.png)
+
+바램 급식기의 급여 기록·섭취량·현재 상태를 가져오는 비공식 Home Assistant 통합입니다.
+Python으로 Home Assistant 안에서 직접 실행하며 Node.js 앱과 MQTT 브로커가 필요하지 않습니다.
+
+## 설치
+
+Home Assistant **2026.10 이상**과 HACS가 필요합니다. 실제 검증 대상은 Home Assistant 2026.10.3입니다.
+
+1. **HACS → ⋮ → 사용자 지정 저장소**를 엽니다.
+2. 저장소에 `https://github.com/Tsuring/varram-homeassistant`, 유형에 **Integration**을 선택합니다.
+3. **VARRAM**을 다운로드하고 Home Assistant를 재시작합니다.
+4. **설정 → 기기 및 서비스 → 통합 추가 → VARRAM**을 선택합니다.
+5. 바램 앱에서 사용하는 **이메일과 비밀번호**로 로그인합니다.
+
+[HACS에서 저장소 열기](https://my.home-assistant.io/redirect/hacs_repository/?owner=Tsuring&repository=varram-homeassistant&category=integration)
+
+급식기에 연결된 반려동물별로 기기와 센서가 자동 등록됩니다. 지원 범위는 `feeder` 모델의 조회입니다.
+급여 실행이나 스케줄·기기 설정을 변경하는 기능은 제공하지 않습니다.
+
+## 센서
+
+반려동물마다 이력 센서 12개와 현재 상태 센서 2개를 제공합니다.
+
+| 센서 | 의미 |
+| --- | --- |
+| 오늘 급여량 (앱 기준) | 끼니별 기록에 앱의 올림 계산을 적용한 값 |
+| 오늘 기록 급여량 (원본) | 끼니별 `gram - immediate`. 실제 추가 토출량의 독립 측정값은 아닙니다. |
+| 오늘 끼니 섭취량 | 오늘 시작한 끼니의 마지막 유효 기록에서 계산한 원본 `gram - left` |
+| 오늘 섭취량 (앱 기준) | 앱의 올림 및 일부 0g → 1g 보정을 적용한 비교용 수치 |
+| 오늘 기록 시각 기준 섭취 추정량 | 누적 섭취량 증가분을 기록 시각의 날짜로 모은 추정치 |
+| 오늘 급여 횟수 | 성공한 서로 다른 끼니 수. 상태 기록 행 수를 더하지 않습니다. |
+| 어제 끼니 섭취량 / 어제 섭취량 (앱 기준) | 어제 시작한 끼니의 원본·앱 기준 섭취량 |
+| 최근 급여 시각 / 최근 섭취 기록 시각 | 마지막 급여 및 양의 섭취 기록 시각 |
+| 최근 기록 잔량 | 마지막 이력의 잔량. 실시간 그릇 무게와 구분합니다. |
+| 최근 급여 이력 | 최근 끼니 최대 10개의 요약을 속성으로 제공합니다. |
+| 현재 급식기 잔량 / 현재 급식기 상태 | 소켓에서 조회한 현재 상태와 확실한 잔량 |
+
+모든 무게는 g, 기록 날짜는 한국 시간(Asia/Seoul) 기준입니다. 끼니 기준 합계는 `give_time` 날짜를 사용하므로
+자정을 넘긴 식사는 끼니를 시작한 날짜에 반영됩니다. 앱의 1g 보정값과 원본 측정 차이를 구분해 제공합니다.
+
+## 갱신과 로그인
+
+- 최근 7일 이력은 기본 **5분마다** 조회합니다.
+- 현재 상태는 **약 1분마다**, 한 번에 급식기 한 대씩 소켓으로 조회합니다.
+- 현재 상태나 잔량이 바뀌면 10초 후 이력을 다시 조회합니다.
+- 그릇 제거·식사 중처럼 무게가 확실하지 않은 상태나 조회 실패를 0g으로 표시하지 않습니다.
+- 앱 토큰의 만료가 가까워지거나 API가 인증 오류를 반환하면 같은 계정으로 자동 재로그인합니다.
+- 비밀번호가 바뀌었거나 재로그인이 거부되면 Home Assistant의 재인증 화면에서 다시 로그인합니다.
+
+이메일·비밀번호·토큰은 Home Assistant 설정에 저장됩니다. 진단에는 자격증명이나 원본 개인정보를 포함하지 않습니다.
+`refresh_token` 교환 API는 확인되지 않아 사용하지 않으며, 자동 갱신은 이메일 재로그인으로 수행합니다.
+
+## 개발과 검증
+
+실행 코드는 `custom_components/varram/`, 테스트는 `tests/`에 있습니다.
+
+```sh
+python -m pip install aiohttp
+python -m unittest discover -s tests -v
+```
+
+GitHub Actions에서 HACS·Hassfest 검증과 Python 테스트를 실행합니다.
+API 및 계산 근거는 [조회 프로토콜 문서](docs/varram-api.md)를 참고하세요.
+API는 관찰된 앱 동작을 기반으로 하므로 서버 변경 시 업데이트가 필요할 수 있습니다.
+
+문제 보고: [GitHub Issues](https://github.com/Tsuring/varram-homeassistant/issues)
+
+라이선스: [MIT](LICENSE)

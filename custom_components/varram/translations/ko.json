@@ -1,0 +1,81 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "VARRAM 계정 연결",
+        "description": "계정 이메일과 비밀번호로 로그인합니다. 새 앱 토큰이 VARRAM에서 승인된 뒤 계정 정보를 저장합니다.",
+        "data": {
+          "email": "계정 이메일",
+          "password": "계정 비밀번호"
+        }
+      },
+      "reauth_confirm": {
+        "title": "VARRAM 인증 갱신",
+        "description": "이메일과 비밀번호로 다시 로그인하거나 새 앱 토큰을 입력하세요.",
+        "data": {
+          "access_token": "새 앱 액세스 토큰",
+          "email": "계정 이메일",
+          "password": "계정 비밀번호"
+        }
+      },
+      "reconfigure": {
+        "title": "VARRAM 로그인 정보 변경",
+        "description": "이메일과 비밀번호를 입력해 자동 로그인을 확인하고 저장하거나 새 앱 토큰을 입력하세요.",
+        "data": {
+          "access_token": "새 앱 액세스 토큰",
+          "email": "계정 이메일",
+          "password": "계정 비밀번호"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "앱 토큰이나 계정 정보가 거부되었거나 다른 계정에 속합니다.",
+      "cannot_connect": "VARRAM에 연결할 수 없습니다. 서비스가 복구된 뒤 다시 시도하세요.",
+      "invalid_response": "VARRAM이 예상하지 못한 응답을 반환했습니다.",
+      "credentials_required": "앱 토큰 또는 이메일과 비밀번호를 모두 입력하세요.",
+      "credentials_pair_required": "이메일과 비밀번호를 모두 입력하거나 둘 다 비워 두세요."
+    },
+    "abort": {
+      "already_configured": "이 VARRAM 계정은 이미 설정되어 있습니다."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "조회 설정",
+        "data": {
+          "scan_interval": "조회 간격(초)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "today_app_feed_amount": { "name": "오늘 급여량 (앱 기준)" },
+      "today_record_feed_amount": { "name": "오늘 기록 급여량 (원본)" },
+      "today_observed_intake": { "name": "오늘 끼니 섭취량" },
+      "today_app_intake": { "name": "오늘 섭취량 (앱 기준)" },
+      "today_record_day_intake": { "name": "오늘 기록 시각 기준 섭취 추정량" },
+      "today_feeding_count": { "name": "오늘 급여 횟수" },
+      "yesterday_observed_intake": { "name": "어제 끼니 섭취량" },
+      "yesterday_app_intake": { "name": "어제 섭취량 (앱 기준)" },
+      "latest_feeding": { "name": "최근 급여 시각" },
+      "latest_intake": { "name": "최근 섭취 기록 시각" },
+      "latest_record_remaining": { "name": "최근 기록 잔량" },
+      "feed_history": { "name": "최근 급여 이력" },
+      "current_remaining_g": { "name": "현재 급식기 잔량" },
+      "current_feeder_status": { "name": "현재 급식기 상태" }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "VARRAM 앱 토큰이 만료되었거나 거부되었습니다. 다시 인증하거나 저장한 계정 정보를 확인하세요."
+    },
+    "cannot_connect": {
+      "message": "VARRAM 서비스에 연결할 수 없습니다."
+    },
+    "invalid_response": {
+      "message": "VARRAM이 잘못된 응답을 반환했습니다."
+    }
+  }
+}

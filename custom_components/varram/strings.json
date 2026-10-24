@@ -1,0 +1,81 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect a VARRAM account",
+        "description": "Sign in with the account email and password. The integration validates the newly issued app token before saving the account.",
+        "data": {
+          "email": "Account email",
+          "password": "Account password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Renew VARRAM authentication",
+        "description": "Enter the account email and password to sign in, or provide a replacement app token.",
+        "data": {
+          "access_token": "Replacement app access token",
+          "email": "Account email",
+          "password": "Account password"
+        }
+      },
+      "reconfigure": {
+        "title": "Update VARRAM credentials",
+        "description": "Provide the account email and password to test and save automatic sign-in, or paste a replacement app token.",
+        "data": {
+          "access_token": "Replacement app access token",
+          "email": "Account email",
+          "password": "Account password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The app token or account credentials were rejected, or belong to another account.",
+      "cannot_connect": "Could not connect to VARRAM. Try again when the service is reachable.",
+      "invalid_response": "VARRAM returned an unexpected response.",
+      "credentials_required": "Enter an app token or both account fields.",
+      "credentials_pair_required": "Enter both the account email and password, or leave both blank."
+    },
+    "abort": {
+      "already_configured": "This VARRAM account is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling settings",
+        "data": {
+          "scan_interval": "Update interval in seconds"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "today_app_feed_amount": { "name": "Today fed amount (app estimate)" },
+      "today_record_feed_amount": { "name": "Today feed amount (raw record)" },
+      "today_observed_intake": { "name": "Today meal intake" },
+      "today_app_intake": { "name": "Today intake (app estimate)" },
+      "today_record_day_intake": { "name": "Today observed intake estimate" },
+      "today_feeding_count": { "name": "Today feeding count" },
+      "yesterday_observed_intake": { "name": "Yesterday meal intake" },
+      "yesterday_app_intake": { "name": "Yesterday intake (app estimate)" },
+      "latest_feeding": { "name": "Latest feeding time" },
+      "latest_intake": { "name": "Latest intake record time" },
+      "latest_record_remaining": { "name": "Latest recorded remaining food" },
+      "feed_history": { "name": "Recent feed history" },
+      "current_remaining_g": { "name": "Current feeder remaining food" },
+      "current_feeder_status": { "name": "Current feeder status" }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "The VARRAM app token expired or was rejected. Reauthenticate or update the saved account credentials."
+    },
+    "cannot_connect": {
+      "message": "Could not connect to the VARRAM service."
+    },
+    "invalid_response": {
+      "message": "VARRAM returned an invalid response."
+    }
+  }
+}

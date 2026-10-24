@@ -1,0 +1,1598 @@
+{
+  "query_start": "2026-10-19 00:00:00",
+  "query_end": "2026-10-25 23:59:59",
+  "pets": [
+    {
+      "id": "pet_1",
+      "name": "Test Pet 1",
+      "rows": [
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-19 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 19.43,
+          "gram": 20.07,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 154,
+          "eatCount": 8616,
+          "eat_time": "2026-10-19 05:46:15"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.65,
+          "gram": 20.07,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 40,
+          "eatCount": 2307,
+          "eat_time": "2026-10-19 06:14:29"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.22,
+          "gram": 20.07,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 177,
+          "eatCount": 9919,
+          "eat_time": "2026-10-19 07:18:49"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.37,
+          "gram": 20.07,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 49,
+          "eatCount": 2707,
+          "eat_time": "2026-10-19 08:35:05"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-19 11:40:04",
+          "spend": 0,
+          "eatCount": 10302,
+          "eat_time": "2026-10-19 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.14,
+          "gram": 20.07,
+          "give_time": "2026-10-19 11:40:04",
+          "spend": 158,
+          "eatCount": 11012,
+          "eat_time": "2026-10-19 14:49:39"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 16.14,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-19 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.32,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 31,
+          "eatCount": 2509,
+          "eat_time": "2026-10-19 18:56:10"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.77,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 77,
+          "eatCount": 5217,
+          "eat_time": "2026-10-19 21:00:08"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.94,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 53,
+          "eatCount": 4415,
+          "eat_time": "2026-10-19 21:04:02"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 4.02,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 58,
+          "eatCount": 2909,
+          "eat_time": "2026-10-19 21:13:15"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 2.69,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 36,
+          "eatCount": 1307,
+          "eat_time": "2026-10-19 21:35:09"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 16.14,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 195,
+          "eatCount": 14010,
+          "eat_time": "2026-10-19 22:17:49"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-20 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 19.82,
+          "gram": 20.07,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 121,
+          "eatCount": 3907,
+          "eat_time": "2026-10-20 05:50:31"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 18.52,
+          "gram": 20.07,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 50,
+          "eatCount": 2718,
+          "eat_time": "2026-10-20 07:01:21"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 14.87,
+          "gram": 20.07,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 94,
+          "eatCount": 6611,
+          "eat_time": "2026-10-20 07:07:15"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.85,
+          "gram": 20.07,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 76,
+          "eatCount": 3207,
+          "eat_time": "2026-10-20 07:28:44"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 0,
+          "eatCount": 10301,
+          "eat_time": "2026-10-20 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.61,
+          "gram": 20.07,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 168,
+          "eatCount": 10314,
+          "eat_time": "2026-10-20 13:50:33"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.79,
+          "gram": 20.07,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 44,
+          "eatCount": 2107,
+          "eat_time": "2026-10-20 14:28:16"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 13.38,
+          "gram": 13.38,
+          "give_time": "2026-10-20 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-20 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.42,
+          "gram": 13.38,
+          "give_time": "2026-10-20 17:40:04",
+          "spend": 70,
+          "eatCount": 5612,
+          "eat_time": "2026-10-20 20:10:09"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 2.32,
+          "gram": 13.38,
+          "give_time": "2026-10-20 17:40:04",
+          "spend": 158,
+          "eatCount": 13111,
+          "eat_time": "2026-10-20 21:51:20"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 13.38,
+          "give_time": "2026-10-20 17:40:04",
+          "spend": 89,
+          "eatCount": 4407,
+          "eat_time": "2026-10-21 04:15:22"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-21 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 18.62,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 193,
+          "eatCount": 10014,
+          "eat_time": "2026-10-21 06:17:58"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.47,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 28,
+          "eatCount": 2207,
+          "eat_time": "2026-10-21 06:50:01"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.87,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 24,
+          "eatCount": 1607,
+          "eat_time": "2026-10-21 07:04:48"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.94,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 106,
+          "eatCount": 8413,
+          "eat_time": "2026-10-21 07:27:07"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 4.17,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 97,
+          "eatCount": 6517,
+          "eat_time": "2026-10-21 08:25:14"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 20.07,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 75,
+          "eatCount": 3307,
+          "eat_time": "2026-10-21 09:09:51"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-21 11:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-21 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.36,
+          "gram": 20.07,
+          "give_time": "2026-10-21 11:40:04",
+          "spend": 162,
+          "eatCount": 9619,
+          "eat_time": "2026-10-21 12:29:37"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 16.36,
+          "gram": 16.36,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-21 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.6,
+          "gram": 16.36,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 55,
+          "eatCount": 2808,
+          "eat_time": "2026-10-21 19:51:26"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 8.77,
+          "gram": 16.36,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 71,
+          "eatCount": 4009,
+          "eat_time": "2026-10-21 20:59:56"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 4.27,
+          "gram": 16.36,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 97,
+          "eatCount": 5514,
+          "eat_time": "2026-10-21 21:14:27"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 16.36,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 116,
+          "eatCount": 7410,
+          "eat_time": "2026-10-21 21:28:18"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-22 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-22 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 19.59,
+          "gram": 20.07,
+          "spend": 163,
+          "give_time": "2026-10-22 05:40:04",
+          "eatCount": 10222,
+          "eat_time": "2026-10-22 05:46:11"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.41,
+          "gram": 20.07,
+          "give_time": "2026-10-22 05:40:04",
+          "spend": 291,
+          "eatCount": 16114,
+          "eat_time": "2026-10-22 08:23:35"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "spend": 0,
+          "give_time": "2026-10-22 11:40:04",
+          "eatCount": 10301,
+          "eat_time": "2026-10-22 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.54,
+          "gram": 20.07,
+          "give_time": "2026-10-22 11:40:04",
+          "spend": 95,
+          "eatCount": 5916,
+          "eat_time": "2026-10-22 13:50:52"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.2,
+          "gram": 20.07,
+          "give_time": "2026-10-22 11:40:04",
+          "spend": 80,
+          "eatCount": 4715,
+          "eat_time": "2026-10-22 15:53:12"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 13.38,
+          "gram": 13.38,
+          "spend": 0,
+          "give_time": "2026-10-22 17:40:05",
+          "eatCount": 10200,
+          "eat_time": "2026-10-22 17:40:05"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 8.73,
+          "gram": 13.38,
+          "spend": 35,
+          "give_time": "2026-10-22 17:40:05",
+          "eatCount": 2510,
+          "eat_time": "2026-10-22 17:45:58"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 5.32,
+          "gram": 13.38,
+          "spend": 60,
+          "give_time": "2026-10-22 17:40:05",
+          "eatCount": 1908,
+          "eat_time": "2026-10-22 19:48:34"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 1.97,
+          "gram": 13.38,
+          "spend": 50,
+          "give_time": "2026-10-22 17:40:05",
+          "eatCount": 2408,
+          "eat_time": "2026-10-22 21:30:06"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 13.38,
+          "spend": 81,
+          "give_time": "2026-10-22 17:40:05",
+          "eatCount": 1707,
+          "eat_time": "2026-10-22 23:31:10"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "spend": 0,
+          "give_time": "2026-10-23 05:40:05",
+          "eatCount": 10303,
+          "eat_time": "2026-10-23 05:40:05"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 17.2,
+          "gram": 20.07,
+          "spend": 206,
+          "give_time": "2026-10-23 05:40:05",
+          "eatCount": 12018,
+          "eat_time": "2026-10-23 07:15:45"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 14.23,
+          "gram": 20.07,
+          "spend": 32,
+          "give_time": "2026-10-23 05:40:05",
+          "eatCount": 2307,
+          "eat_time": "2026-10-23 08:41:46"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.1,
+          "gram": 20.07,
+          "spend": 61,
+          "give_time": "2026-10-23 05:40:05",
+          "eatCount": 3707,
+          "eat_time": "2026-10-23 09:29:50"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.87,
+          "gram": 20.07,
+          "spend": 66,
+          "give_time": "2026-10-23 05:40:05",
+          "eatCount": 3507,
+          "eat_time": "2026-10-23 10:51:07"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-23 11:40:04",
+          "spend": 0,
+          "eatCount": 10302,
+          "eat_time": "2026-10-23 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-23 11:40:04",
+          "spend": 30,
+          "eatCount": 1508,
+          "eat_time": "2026-10-23 15:15:51"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-23 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 19.59,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 109,
+          "eatCount": 5711,
+          "eat_time": "2026-10-23 19:30:26"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 18.22,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 21,
+          "eatCount": 706,
+          "eat_time": "2026-10-23 19:42:31"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.76,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 83,
+          "eatCount": 5115,
+          "eat_time": "2026-10-23 21:11:34"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.52,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 121,
+          "eatCount": 5208,
+          "eat_time": "2026-10-23 23:06:42"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.51,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 36,
+          "eatCount": 1509,
+          "eat_time": "2026-10-23 23:12:18"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.68,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 29,
+          "eatCount": 1307,
+          "eat_time": "2026-10-23 23:50:15"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.62,
+          "gram": 20.07,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 26,
+          "eatCount": 1206,
+          "eat_time": "2026-10-24 00:26:45"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 0,
+          "eatCount": 10302,
+          "eat_time": "2026-10-24 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 17.71,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 103,
+          "eatCount": 6316,
+          "eat_time": "2026-10-24 05:44:55"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 14.89,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 24,
+          "eatCount": 1709,
+          "eat_time": "2026-10-24 06:22:02"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.81,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 71,
+          "eatCount": 3806,
+          "eat_time": "2026-10-24 06:55:42"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.34,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 148,
+          "eatCount": 10513,
+          "eat_time": "2026-10-24 08:08:09"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 1.51,
+          "gram": 20.07,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 204,
+          "eatCount": 13824,
+          "eat_time": "2026-10-24 08:56:52"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-24 11:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-24 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-24 11:40:04",
+          "spend": 26,
+          "eatCount": 1508,
+          "eat_time": "2026-10-24 16:56:58"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-24 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 19.24,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 151,
+          "eatCount": 8213,
+          "eat_time": "2026-10-24 18:56:25"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 14.73,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 107,
+          "eatCount": 7318,
+          "eat_time": "2026-10-24 20:50:51"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.12,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 75,
+          "eatCount": 3608,
+          "eat_time": "2026-10-24 21:27:30"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 3.09,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 215,
+          "eatCount": 12216,
+          "eat_time": "2026-10-24 21:59:24"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 20.07,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 88,
+          "eatCount": 4107,
+          "eat_time": "2026-10-25 00:21:23"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-25 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-25 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 20.07,
+          "gram": 20.07,
+          "give_time": "2026-10-25 05:40:04",
+          "spend": 120,
+          "eatCount": 7417,
+          "eat_time": "2026-10-25 05:57:54"
+        }
+      ]
+    },
+    {
+      "id": "pet_2",
+      "name": "Test Pet 2",
+      "rows": [
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 17.4,
+          "give_time": "2026-10-18 17:40:04",
+          "spend": 91,
+          "eatCount": 5006,
+          "eat_time": "2026-10-19 01:13:50"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-19 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 23.01,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 82,
+          "eatCount": 5719,
+          "eat_time": "2026-10-19 05:49:07"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 20.35,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 28,
+          "eatCount": 1608,
+          "eat_time": "2026-10-19 05:53:34"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 17.82,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 37,
+          "eatCount": 2207,
+          "eat_time": "2026-10-19 07:10:05"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 14.59,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 86,
+          "eatCount": 4920,
+          "eat_time": "2026-10-19 07:21:51"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.99,
+          "gram": 26.1,
+          "give_time": "2026-10-19 05:40:04",
+          "spend": 54,
+          "eatCount": 2206,
+          "eat_time": "2026-10-19 07:50:21"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-19 11:40:04",
+          "spend": 0,
+          "eatCount": 10201,
+          "eat_time": "2026-10-19 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.97,
+          "gram": 17.4,
+          "give_time": "2026-10-19 11:40:04",
+          "spend": 64,
+          "eatCount": 5112,
+          "eat_time": "2026-10-19 14:52:30"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-19 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.64,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 72,
+          "eatCount": 4107,
+          "eat_time": "2026-10-19 19:13:06"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 8.91,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 138,
+          "eatCount": 9313,
+          "eat_time": "2026-10-19 21:01:40"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 5.12,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 55,
+          "eatCount": 3207,
+          "eat_time": "2026-10-19 22:16:07"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 3.19,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 31,
+          "eatCount": 1707,
+          "eat_time": "2026-10-19 23:28:32"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 17.4,
+          "give_time": "2026-10-19 17:40:04",
+          "spend": 239,
+          "eatCount": 17814,
+          "eat_time": "2026-10-20 05:35:44"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-20 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.64,
+          "gram": 26.1,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 289,
+          "eatCount": 17511,
+          "eat_time": "2026-10-20 07:02:19"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.14,
+          "gram": 26.1,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 60,
+          "eatCount": 3006,
+          "eat_time": "2026-10-20 08:19:40"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.45,
+          "gram": 26.1,
+          "give_time": "2026-10-20 05:40:04",
+          "spend": 56,
+          "eatCount": 3307,
+          "eat_time": "2026-10-20 09:09:54"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 0,
+          "eatCount": 10201,
+          "eat_time": "2026-10-20 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.77,
+          "gram": 17.4,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 76,
+          "eatCount": 3608,
+          "eat_time": "2026-10-20 12:37:24"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.74,
+          "gram": 17.4,
+          "give_time": "2026-10-20 11:40:04",
+          "spend": 33,
+          "eatCount": 3417,
+          "eat_time": "2026-10-20 13:53:30"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-20 17:40:05",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-20 17:40:05"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.64,
+          "gram": 17.4,
+          "give_time": "2026-10-20 17:40:05",
+          "spend": 65,
+          "eatCount": 3616,
+          "eat_time": "2026-10-20 20:11:24"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.18,
+          "gram": 17.4,
+          "give_time": "2026-10-20 17:40:05",
+          "spend": 185,
+          "eatCount": 11814,
+          "eat_time": "2026-10-21 01:37:51"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 0,
+          "eatCount": 10302,
+          "eat_time": "2026-10-21 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 20.36,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 69,
+          "eatCount": 3415,
+          "eat_time": "2026-10-21 06:21:29"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.6,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 55,
+          "eatCount": 2106,
+          "eat_time": "2026-10-21 06:31:14"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 13.95,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 26,
+          "eatCount": 1408,
+          "eat_time": "2026-10-21 07:31:41"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 9.37,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 106,
+          "eatCount": 8411,
+          "eat_time": "2026-10-21 08:27:03"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.57,
+          "gram": 26.1,
+          "give_time": "2026-10-21 05:40:04",
+          "spend": 40,
+          "eatCount": 2409,
+          "eat_time": "2026-10-21 09:31:12"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-21 11:40:04",
+          "spend": 0,
+          "eatCount": 10201,
+          "eat_time": "2026-10-21 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.61,
+          "gram": 17.4,
+          "give_time": "2026-10-21 11:40:04",
+          "spend": 27,
+          "eatCount": 1915,
+          "eat_time": "2026-10-21 12:32:30"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.85,
+          "gram": 17.4,
+          "give_time": "2026-10-21 11:40:04",
+          "spend": 50,
+          "eatCount": 2007,
+          "eat_time": "2026-10-21 15:21:15"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 0,
+          "eatCount": 10201,
+          "eat_time": "2026-10-21 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 51,
+          "eatCount": 2206,
+          "eat_time": "2026-10-21 20:07:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.71,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 32,
+          "eatCount": 2306,
+          "eat_time": "2026-10-21 20:38:32"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.59,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 111,
+          "eatCount": 7314,
+          "eat_time": "2026-10-21 21:16:11"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 7.36,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 85,
+          "eatCount": 6216,
+          "eat_time": "2026-10-21 21:30:20"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 2.46,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 109,
+          "eatCount": 4307,
+          "eat_time": "2026-10-22 00:05:27"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 17.4,
+          "give_time": "2026-10-21 17:40:04",
+          "spend": 21,
+          "eatCount": 1207,
+          "eat_time": "2026-10-22 03:25:47"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "spend": 0,
+          "give_time": "2026-10-22 05:40:04",
+          "eatCount": 10303,
+          "eat_time": "2026-10-22 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 23.34,
+          "gram": 26.1,
+          "give_time": "2026-10-22 05:40:04",
+          "spend": 95,
+          "eatCount": 6814,
+          "eat_time": "2026-10-22 05:49:02"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 17.15,
+          "gram": 26.1,
+          "give_time": "2026-10-22 05:40:04",
+          "spend": 71,
+          "eatCount": 4107,
+          "eat_time": "2026-10-22 08:35:34"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-22 11:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-22 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.34,
+          "gram": 17.4,
+          "spend": 101,
+          "give_time": "2026-10-22 11:40:04",
+          "eatCount": 8114,
+          "eat_time": "2026-10-22 15:54:46"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "spend": 0,
+          "give_time": "2026-10-22 17:40:04",
+          "eatCount": 10201,
+          "eat_time": "2026-10-22 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.67,
+          "gram": 17.4,
+          "give_time": "2026-10-22 17:40:04",
+          "spend": 40,
+          "eatCount": 1507,
+          "eat_time": "2026-10-22 19:49:53"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.14,
+          "gram": 17.4,
+          "spend": 86,
+          "give_time": "2026-10-22 17:40:04",
+          "eatCount": 3106,
+          "eat_time": "2026-10-22 20:43:32"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 3.4,
+          "gram": 17.4,
+          "spend": 228,
+          "give_time": "2026-10-22 17:40:04",
+          "eatCount": 14714,
+          "eat_time": "2026-10-22 21:04:16"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 17.4,
+          "give_time": "2026-10-22 17:40:04",
+          "spend": 46,
+          "eatCount": 2107,
+          "eat_time": "2026-10-22 23:57:15"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-23 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-23 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 23.9,
+          "gram": 26.1,
+          "give_time": "2026-10-23 05:40:04",
+          "spend": 92,
+          "eatCount": 5314,
+          "eat_time": "2026-10-23 07:19:23"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 18.64,
+          "gram": 26.1,
+          "spend": 75,
+          "give_time": "2026-10-23 05:40:04",
+          "eatCount": 5006,
+          "eat_time": "2026-10-23 08:13:10"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 18.64,
+          "gram": 18.64,
+          "give_time": "2026-10-23 11:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-23 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 16.06,
+          "gram": 18.64,
+          "give_time": "2026-10-23 11:40:04",
+          "spend": 50,
+          "eatCount": 2006,
+          "eat_time": "2026-10-23 15:16:28"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-23 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 8.11,
+          "gram": 17.4,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 169,
+          "eatCount": 6308,
+          "eat_time": "2026-10-23 21:13:11"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.37,
+          "gram": 17.4,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 54,
+          "eatCount": 4218,
+          "eat_time": "2026-10-23 23:11:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 5.18,
+          "gram": 17.4,
+          "give_time": "2026-10-23 17:40:04",
+          "spend": 33,
+          "eatCount": 1105,
+          "eat_time": "2026-10-24 00:26:09"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 0,
+          "eatCount": 10302,
+          "eat_time": "2026-10-24 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.84,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 214,
+          "eatCount": 15515,
+          "eat_time": "2026-10-24 05:41:13"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 11.21,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 138,
+          "eatCount": 5908,
+          "eat_time": "2026-10-24 05:53:11"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 6.39,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 82,
+          "eatCount": 4307,
+          "eat_time": "2026-10-24 08:13:35"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 3.46,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 94,
+          "eatCount": 3707,
+          "eat_time": "2026-10-24 08:53:49"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 2.26,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 29,
+          "eatCount": 2616,
+          "eat_time": "2026-10-24 09:00:19"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 1.06,
+          "gram": 26.1,
+          "give_time": "2026-10-24 05:40:04",
+          "spend": 53,
+          "eatCount": 2508,
+          "eat_time": "2026-10-24 09:52:05"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-24 11:40:04",
+          "spend": 0,
+          "eatCount": 10202,
+          "eat_time": "2026-10-24 11:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 15.73,
+          "gram": 17.4,
+          "give_time": "2026-10-24 11:40:04",
+          "spend": 45,
+          "eatCount": 2407,
+          "eat_time": "2026-10-24 17:24:33"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 17.4,
+          "gram": 17.4,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 0,
+          "eatCount": 10200,
+          "eat_time": "2026-10-24 17:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 12.53,
+          "gram": 17.4,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 39,
+          "eatCount": 1910,
+          "eat_time": "2026-10-24 17:42:22"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 10.5,
+          "gram": 17.4,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 1,
+          "eatCount": 102,
+          "eat_time": "2026-10-24 20:46:16"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 3.81,
+          "gram": 17.4,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 190,
+          "eatCount": 10516,
+          "eat_time": "2026-10-24 20:47:18"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 0,
+          "gram": 17.4,
+          "give_time": "2026-10-24 17:40:04",
+          "spend": 126,
+          "eatCount": 5307,
+          "eat_time": "2026-10-24 23:25:46"
+        },
+        {
+          "status": "feed_finish",
+          "immediate": 0,
+          "left": 26.1,
+          "gram": 26.1,
+          "give_time": "2026-10-25 05:40:04",
+          "spend": 0,
+          "eatCount": 10303,
+          "eat_time": "2026-10-25 05:40:04"
+        },
+        {
+          "status": "waiting",
+          "immediate": 0,
+          "left": 22.77,
+          "gram": 26.1,
+          "give_time": "2026-10-25 05:40:04",
+          "spend": 83,
+          "eatCount": 4918,
+          "eat_time": "2026-10-25 06:00:02"
+        }
+      ]
+    }
+  ]
+}

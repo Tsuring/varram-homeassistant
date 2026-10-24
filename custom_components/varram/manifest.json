@@ -1,0 +1,14 @@
+{
+  "domain": "varram",
+  "name": "VARRAM",
+  "codeowners": [
+    "@Tsuring"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/Tsuring/varram-homeassistant",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Tsuring/varram-homeassistant/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

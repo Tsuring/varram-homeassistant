@@ -1,0 +1,22 @@
+﻿.local/
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+AGENTS.md
+AGENTS.override.md
+DEPLOYMENT*.md
+node_modules/
+.env
+.env.*
+!.env.example
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+# Retired Node.js prototype stays local; the released integration is Python.
+src/
+test/
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
