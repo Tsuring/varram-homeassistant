@@ -3,7 +3,6 @@
 ![VARRAM integration icon](custom_components/varram/brand/icon.png)
 
 바램 급식기의 급여 기록·섭취량·현재 상태를 가져오는 비공식 Home Assistant 통합입니다.
-Python으로 Home Assistant 안에서 직접 실행하며 Node.js 앱과 MQTT 브로커가 필요하지 않습니다.
 
 ## 설치
 
