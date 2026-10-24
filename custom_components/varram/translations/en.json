@@ -50,6 +50,9 @@
     }
   },
   "entity": {
+    "button": {
+      "additional_feed": { "name": "Additional feed" }
+    },
     "sensor": {
       "today_app_feed_amount": { "name": "Today fed amount (app estimate)" },
       "today_record_feed_amount": { "name": "Today feed amount (raw record)" },
@@ -76,6 +79,42 @@
     },
     "invalid_response": {
       "message": "VARRAM returned an invalid response."
+    },
+    "feeding_busy": {
+      "message": "Another feeder request is already running. Try again after it finishes."
+    },
+    "feeding_cooldown": {
+      "message": "A feed request was sent recently. Check the feeder before pressing again."
+    },
+    "feeding_calibration_missing": {
+      "message": "VARRAM did not report a valid calibration minimum. The request was not sent."
+    },
+    "feeding_calibration_unavailable": {
+      "message": "Could not verify the feeder calibration. The request was not sent."
+    },
+    "feeding_status_unavailable": {
+      "message": "Could not verify fresh feeder status and remaining food. The request was not sent."
+    },
+    "feeding_state_blocked": {
+      "message": "The feeder is not in a safe state for additional feeding. The request was not sent."
+    },
+    "feeding_overfull": {
+      "message": "The latest feeder status reports more than 60 g remaining. The request was not sent."
+    },
+    "feeding_auth": {
+      "message": "VARRAM authentication could not be verified. The request was not sent."
+    },
+    "feeding_not_ready": {
+      "message": "The VARRAM feeder is not ready. The request was not sent."
+    },
+    "feeding_outcome_unknown": {
+      "message": "The request may have been sent, but its outcome is unknown. Check the feeder before pressing again."
+    },
+    "feeding_execution_unknown": {
+      "message": "VARRAM acknowledged the request, but feeder execution was not confirmed. Check the feeder before pressing again."
+    },
+    "feeding_failed": {
+      "message": "The feeder reported a bowl or feed failure after starting. Check the feeder before trying again."
     }
   }
 }

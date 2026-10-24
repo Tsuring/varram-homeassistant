@@ -1,10 +1,11 @@
-"""Async client for VARRAM's read-only pet and feed-history endpoints."""
+"""Async client for VARRAM metadata, calibration, and feed-history endpoints."""
 
 from __future__ import annotations
 
 import asyncio
 import json
 import logging
+import math
 import time
 from collections.abc import Callable, Mapping
 from typing import Any
@@ -153,6 +154,31 @@ class VarramApiClient:
             raise VarramInvalidResponse("Feed history exceeds the supported limit")
         return records
 
+    async def async_get_feeder_optimization(self, device_id: str) -> float | None:
+        """Read the vendor-calculated minimum feed setting for one feeder."""
+        path = f"/get/mobile/info/feeder/{quote(device_id, safe='')}"
+        payload = await self._async_request_authenticated(
+            "POST",
+            path,
+            json_body={
+                "request_update_info": True,
+                "request_check_optimization": True,
+            },
+        )
+        data = payload.get("data")
+        if not isinstance(data, Mapping):
+            return None
+        optimization = data.get("optimization")
+        if isinstance(optimization, bool) or not isinstance(optimization, (int, float)):
+            return None
+        try:
+            amount = float(optimization)
+        except OverflowError:
+            return None
+        if not math.isfinite(amount) or amount <= 0:
+            return None
+        return amount
+
     async def async_login(self, email: str, password: str) -> tuple[str, TokenClaims]:
         """Submit the observed native app login form without following redirects."""
         form = urlencode({"email": email, "password": password})
@@ -227,7 +253,7 @@ class VarramApiClient:
         path: str,
         *,
         token: str | None = None,
-        json_body: Mapping[str, str] | None = None,
+        json_body: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
         """Make an authenticated request with at most one safe login retry.
 
@@ -285,7 +311,7 @@ class VarramApiClient:
         path: str,
         *,
         token: str | None = None,
-        json_body: Mapping[str, str] | None = None,
+        json_body: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
         headers = {"auth": token or self._token}
         timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT_SECONDS)

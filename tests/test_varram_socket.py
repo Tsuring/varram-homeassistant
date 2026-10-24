@@ -74,6 +74,14 @@ class StatusPacketTests(unittest.TestCase):
         self.assertEqual(parsed["status"], "feed_finish")
         self.assertEqual(parsed["remaining_grams"], 18.13)
 
+    def test_eat_keeps_sensor_weight_unavailable_but_retains_preflight_measurement(self) -> None:
+        parsed = socket.parse_status_packet(
+            packet("device-1", "eat", remaining=22.77), "device-1"
+        )
+
+        self.assertIsNone(parsed["remaining_grams"])
+        self.assertEqual(parsed["reported_remaining_grams"], 22.77)
+
     def test_non_waiting_status_has_no_weight_and_invalid_packets_are_ignored(self) -> None:
         for status in ("eat", "feed_start", "none_bowl", "empty_feed"):
             with self.subTest(status=status):

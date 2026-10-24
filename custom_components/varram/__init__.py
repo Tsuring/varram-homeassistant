@@ -1,4 +1,4 @@
-"""VARRAM read-only pet feeder integration."""
+"""VARRAM pet feeder integration with guarded additional-feed requests."""
 
 from __future__ import annotations
 

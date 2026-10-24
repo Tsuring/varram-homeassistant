@@ -1,4 +1,4 @@
-"""Read-only polling coordinator for connected VARRAM feeders."""
+"""Poll connected VARRAM feeders and coordinate guarded button requests."""
 
 from __future__ import annotations
 
@@ -12,9 +12,15 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .api import VarramApiClient, VarramAuthError, VarramConnectionError, VarramInvalidResponse
+from .api import (
+    VarramApiClient,
+    VarramAuthError,
+    VarramConnectionError,
+    VarramInvalidResponse,
+)
 from .const import CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL, DOMAIN
 from .models import PetMetrics, aggregate_feed_records
+from .socket import VarramFeedingError
 from .time_utils import feed_history_window
 
 _LOGGER = logging.getLogger(__name__)
@@ -43,10 +49,13 @@ class VarramCoordinator(DataUpdateCoordinator[dict[str, PetMetrics]]):
         self.pets: dict[str, dict[str, str]] = {}
         self.feeder_pet_ids: tuple[str, ...] = ()
         self.feeder_connections: tuple[dict[str, str], ...] = ()
+        self.minimum_feed_amounts: dict[str, float | None] = {}
         self.socket_coordinator = VarramSocketCoordinator(hass, entry)
         self.socket_monitor: Any | None = None
         self._socket_fingerprints: dict[str, tuple[str, float | None]] = {}
         self._socket_refresh_handle: asyncio.TimerHandle | None = None
+        self._feeding_request_lock = asyncio.Lock()
+        self._feeding_request_tasks: set[asyncio.Task[Any]] = set()
 
     async def _async_setup(self) -> None:
         """Load the account's minimal pet list and feeder associations."""
@@ -77,6 +86,19 @@ class VarramCoordinator(DataUpdateCoordinator[dict[str, PetMetrics]]):
         ))
         for connection in self.feeder_connections:
             self.socket_coordinator.async_set_unavailable(connection)
+            try:
+                self.minimum_feed_amounts[connection["device_id"]] = (
+                    await self.client.async_get_feeder_optimization(
+                        connection["device_id"]
+                    )
+                )
+            except VarramAuthError as err:
+                raise ConfigEntryAuthFailed(
+                    translation_domain=DOMAIN, translation_key="invalid_auth"
+                ) from err
+            except (VarramConnectionError, VarramInvalidResponse):
+                self.minimum_feed_amounts[connection["device_id"]] = None
+                _LOGGER.debug("VARRAM feeder calibration metadata is unavailable")
 
     async def _async_update_data(self) -> dict[str, PetMetrics]:
         """Fetch the recent week, leaving unavailable data unavailable on errors."""
@@ -113,6 +135,50 @@ class VarramCoordinator(DataUpdateCoordinator[dict[str, PetMetrics]]):
         """Mark one socket device unavailable without affecting HTTP sensors."""
         self.socket_coordinator.async_set_unavailable(connection)
 
+    async def async_request_additional_feed(
+        self, connection: dict[str, str]
+    ) -> None:
+        """Validate calibration and send one guarded feed request."""
+        if self._feeding_request_lock.locked():
+            raise VarramFeedingError("feeding_busy")
+        await self._feeding_request_lock.acquire()
+        task = asyncio.current_task()
+        if task is not None:
+            self._feeding_request_tasks.add(task)
+        try:
+            if self.socket_monitor is None:
+                raise VarramFeedingError("feeding_not_ready")
+            try:
+                minimum_feed_amount = await self.client.async_get_feeder_optimization(
+                    connection["device_id"]
+                )
+            except VarramAuthError:
+                raise VarramFeedingError("feeding_auth") from None
+            except (VarramConnectionError, VarramInvalidResponse):
+                self.minimum_feed_amounts[connection["device_id"]] = None
+                raise VarramFeedingError(
+                    "feeding_calibration_unavailable"
+                ) from None
+
+            self.minimum_feed_amounts[connection["device_id"]] = minimum_feed_amount
+            if minimum_feed_amount is None:
+                raise VarramFeedingError("feeding_calibration_missing")
+
+            try:
+                await self.socket_monitor.async_request_additional_feed(
+                    connection,
+                    minimum_feed_amount=minimum_feed_amount,
+                )
+            except VarramFeedingError as err:
+                if err.send_attempted:
+                    self._schedule_socket_history_refresh()
+                raise
+            self._schedule_socket_history_refresh()
+        finally:
+            if task is not None:
+                self._feeding_request_tasks.discard(task)
+            self._feeding_request_lock.release()
+
     def _schedule_socket_history_refresh(self) -> None:
         if self._socket_refresh_handle is not None:
             self._socket_refresh_handle.cancel()
@@ -128,6 +194,15 @@ class VarramCoordinator(DataUpdateCoordinator[dict[str, PetMetrics]]):
 
     async def async_shutdown(self) -> None:
         """Cancel debounce work and all active status socket operations."""
+        current = asyncio.current_task()
+        feeding_tasks = [
+            task for task in self._feeding_request_tasks if task is not current
+        ]
+        for task in feeding_tasks:
+            task.cancel()
+        if feeding_tasks:
+            await asyncio.gather(*feeding_tasks, return_exceptions=True)
+        self._feeding_request_tasks.clear()
         if self._socket_refresh_handle is not None:
             self._socket_refresh_handle.cancel()
             self._socket_refresh_handle = None

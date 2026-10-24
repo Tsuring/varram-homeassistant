@@ -1,4 +1,4 @@
-﻿# VARRAM 조회 프로토콜
+# VARRAM 조회·추가 급여 프로토콜
 
 ## 확인 범위
 
@@ -34,13 +34,44 @@
 
 웹앱의 `socketController.js`와 `homeMainController_hc.js`는 `wss://smb.varram-robot.com/?auth=<access_token>&target=<device_id>`에 연결한다. 연결 후 `{"type":"req_device_status","data":{"device_id":"...","msg_id":"JWT의 userid"}}`로 상태를 조회한다. 이 조회만 두 급식기에 실제 전송하여 `nt_device_status` 응답을 확인했다. 토큰이 URL에 들어가므로 URL·접속 오류 원문은 로그에 남기지 않는다.
 
-응답 `data.feeding`은 현재 `type`과 `left_feed`, `power`는 전원 종류, `feed_lack`는 사료 부족 상태를 제공했다. 검증 당시 두 급식기의 waiting 잔량은 각각 20.07g와 22.77g로 최근 이력의 값과 일치했다. 이 소켓 응답에는 일별 섭취량이나 급여 이력 목록이 없으므로 HTTP 이력 조회를 함께 사용한다. 현재 잔량과 최근 기록 잔량은 별도 값이다. 그릇 제거는 0g 섭취로 처리하지 않는다. 관찰되지 않은 급여·설정 명령은 전송하지 않는다.
+응답 `data.feeding`은 현재 `type`과 `left_feed`, `power`는 전원 종류, `feed_lack`는 사료 부족 상태를 제공했다. 검증 당시 두 급식기의 waiting 잔량은 각각 20.07g와 22.77g로 최근 이력의 값과 일치했다. 이 소켓 응답에는 일별 섭취량이나 급여 이력 목록이 없으므로 HTTP 이력 조회를 함께 사용한다. 현재 잔량과 최근 기록 잔량은 별도 값이다. 그릇 제거는 0g 섭취로 처리하지 않는다. 설정 변경 명령은 전송하지 않는다. 추가 급여 명령의 근거와 검증 경계는 아래에 별도로 기록한다.
 
 기기 변화 없이 수신되는 자발적 알림의 빈도·보장 여부는 검증하지 않았다. 소켓 연결만으로 모든 섭취 기록이 전달된다고 가정하지 않으며, 상태 조회와 5분 이력 조회를 유지한다.
 
 두 급식기에 동시에 소켓을 열면 한쪽에서 1006 종료가 재현됐다. 앱 코드에도 급식기를 순회하며 조회하는 구조가 있어, 브리지는 한 계정에 소켓 하나만 열고 급식기를 차례로 조회한다. 두 기기의 실제 순차 수신을 검증했으며, 조회 중 waiting 잔량 변화와 eat 상태도 관찰했다. 약 60초 주기의 현재 상태 조회에서 변화가 보이면 10초 지연 후 이력을 다시 조회하고, 기본 5분 조회로도 보완한다. eat·feed_start 및 그릇 제거·급여 실패 상태에서는 확실하지 않은 현재 무게를 0g으로 게시하지 않는다.
 
-## 웹앱 계산 근거
+## 추가 급여 명령
+
+공개 웹앱 `homeMainController_hc.js`의 SHA256은 `d003f48079a0b951a2603a248b93a3d6beb9bdb97e1e1b347ac4e4bdd2f38a04`다.
+`DC_feed_Popup`(14796–14824행)은 `optimization`을 사료 티칭 결과의 최소 급여량으로 표시한다.
+`POST /get/mobile/info/feeder/{device_id}`에 `{"request_update_info":true,"request_check_optimization":true}`를 보내면
+`data.optimization`, `opt_gain`, `opt_offset`, `update_info`가 반환된다. 실제 계정에서 이 조회만 실행하여
+두 급식기의 optimization 6.69와 8.7을 확인했다. 개인 기기 식별자나 보정 계수는 저장하지 않는다.
+
+`DC_send_req_feeding`(14877–14881행)과 `sendPacket_WS`(14951–14994행)의 명령은 다음과 같다.
+
+```json
+{"type":"req_feeding","data":{"device_id":"대상 기기","msg_id":"JWT userid","gram":1}}
+```
+
+`gram`은 표시 최소량과 관계없이 고정 1이다. 이를 실제 1g이나 임의 급여량 입력으로 해석하지 않는다.
+현재 통합은 앱과 같은 최소량 추가 급여 버튼만 제공하며, 티칭 값이 없으면 실행하지 않는다.
+`msg_id`는 사용자 ID이므로 요청별 중복 방지 키로 사용할 수 없다.
+
+`TASK_req_feeding`(15186–15335행)은 먼저 같은 소켓으로 `req_device_status`를 조회한다.
+앱은 `feed_start`, `none_bowl`, 미수신 상태에서 버튼을 막으며, 60g 초과 잔량은 경고한다.
+통합은 더 보수적으로 60g 초과와 알려지지 않은 상태에서도 실행을 막는다.
+한 계정의 조회·명령 소켓을 직렬화하고, 전송을 시도한 급식기는 60초 동안 다시 실행하지 않는다.
+
+`rsp_feeding`은 ACK이며 실제 토출 완료 증거가 아니다. 앱은 이후 상태 변화와 `feed_finish`/`eat`를
+관찰하고 `empty_feed`/`none_bowl`은 실패로 처리한다. 앱의 ACK·진행 대기 한도는 각각 10초이며 재전송은 없다.
+통합 역시 명령 전송 시도 이후 타임아웃·연결 종료를 완료 불명으로 처리하고 자동 재전송하지 않는다.
+기존 `eat` 상태를 새 명령 완료로 간주하거나 급여·섭취량을 낙관적으로 증가시키지 않는다.
+
+2026-10-25 구현 검증은 모의 소켓·기록, 실제 읽기 전용 상태 및 Home Assistant 엔티티 등록으로 구분한다.
+실제 추가 급여 명령을 보내 사료가 나오는지는 별도 실기 확인이 필요하다.
+
+## 웹앱 계산 함수
 
 실제 제공된 `/javascripts/varram/homeMainController_hc.js`의 주요 함수:
 

@@ -85,6 +85,49 @@ class FakeSession:
 
 
 class AuthRenewalTests(unittest.IsolatedAsyncioTestCase):
+    async def test_feeder_optimization_uses_read_only_metadata_request(self) -> None:
+        now = 1_800_000_000
+        current_token = token("account-1", now + 3600)
+        session = FakeSession(
+            FakeResponse({}),
+            FakeResponse({"type": "success", "data": {"optimization": 6.69}}),
+        )
+        client = api.VarramApiClient(session, current_token, clock=lambda: now)
+
+        minimum = await client.async_get_feeder_optimization("device-1")
+
+        self.assertEqual(minimum, 6.69)
+        self.assertEqual(session.requests[0]["method"], "POST")
+        self.assertEqual(
+            session.requests[0]["url"],
+            "https://web.varram-robot.com/get/mobile/info/feeder/device-1",
+        )
+        self.assertEqual(
+            session.requests[0]["json"],
+            {
+                "request_update_info": True,
+                "request_check_optimization": True,
+            },
+        )
+        self.assertEqual(session.requests[0]["headers"]["auth"], current_token)
+
+    async def test_invalid_feeder_optimization_is_never_accepted_as_calibration(self) -> None:
+        for value in (None, 0, -1, float("inf"), "6.69", True):
+            with self.subTest(value=value):
+                session = FakeSession(
+                    FakeResponse({}),
+                    FakeResponse({"type": "success", "data": {"optimization": value}}),
+                )
+                client = api.VarramApiClient(
+                    session,
+                    token("account-1", 1_800_003_600),
+                    clock=lambda: 1_800_000_000,
+                )
+
+                self.assertIsNone(
+                    await client.async_get_feeder_optimization("device-1")
+                )
+
     async def test_blank_seed_token_uses_native_login_and_validates_new_token(self) -> None:
         now = 1_800_000_000
         fresh_token = token("account-1", now + 30 * 24 * 60 * 60)
